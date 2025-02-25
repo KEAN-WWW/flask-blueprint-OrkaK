@@ -8,35 +8,36 @@
         <title>My Site - {% block title %}{% endblock %}</title>
     {% endblock %}
 
-<style>
-    menu li {
-        display: inline;
-    }
-
-</style>
-
-
-</head>
-
-
-
+    <style>
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+    </style>
+</head>  
 <body>
 <header>
-    <menu>
-        <li><a href="{{ url_for('homepage.homepage') }}">Home</a></li>
-        <li><a href="{{ url_for('homepage.about') }}">About</a></li>
-    </menu>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('homepage.home') }}">Home</a></li>
+            <li><a href="{{ url_for('homepage.about') }}">About</a></li>
+        </ul>
+    </nav>
 </header>
+
 <!-- Renders Form Flash Messages -->
-
-<div>
-<!-- Your page content -->
-
+<div>  
     {% block content %}
     {% endblock %}
 </div>
+
 <footer>
-    Footer Goes Here
+    Footer Goes Here.
 </footer>
+
 </body>
 </html>
